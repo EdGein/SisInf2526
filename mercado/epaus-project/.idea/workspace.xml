@@ -5,7 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="266c19c3-f01c-48e0-9195-ede888cdabc3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/Cliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/Portefolio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/isel/sisinf/ui/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/isel/sisinf/ui/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/target/app-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/target/app-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/target/classes/isel/sisinf/ui/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/target/classes/isel/sisinf/ui/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/target/classes/isel/sisinf/ui/UI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/target/classes/isel/sisinf/ui/UI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/target/classes/isel/sisinf/ui/UI$Option.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/target/classes/isel/sisinf/ui/UI$Option.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/target/classes/isel/sisinf/ui/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/target/classes/isel/sisinf/ui/UI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/target/surefire-reports/TEST-isel.sisinf.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/target/surefire-reports/TEST-isel.sisinf.AppTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/target/surefire-reports/isel.sisinf.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/target/surefire-reports/isel.sisinf.AppTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dal/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dal/src/main/java/isel/sisinf/jpa/Dal.java" beforeDir="false" afterPath="$PROJECT_DIR$/dal/src/main/java/isel/sisinf/jpa/Dal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dal/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dal/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dal/target/classes/isel/sisinf/jpa/Dal.class" beforeDir="false" afterPath="$PROJECT_DIR$/dal/target/classes/isel/sisinf/jpa/Dal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dal/target/dal-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dal/target/dal-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dal/target/surefire-reports/TEST-isel.sisinf.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dal/target/surefire-reports/TEST-isel.sisinf.AppTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dal/target/surefire-reports/isel.sisinf.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dal/target/surefire-reports/isel.sisinf.AppTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/model/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/model-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/model-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/surefire-reports/TEST-isel.sisinf.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/surefire-reports/TEST-isel.sisinf.AppTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/surefire-reports/isel.sisinf.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/surefire-reports/isel.sisinf.AppTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +40,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="19" />
+    <option name="cachedIndexableFilesCount" value="35" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -23,13 +57,71 @@
     <commands />
     <urls />
   </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0285572328196688" />
+      <entry key="MS500" value="1.4910697976316958" />
+      <entry key="S2" value="1.8371163148215264" />
+      <entry key="S5" value="1.9313530099210015" />
+      <entry key="S10" value="1.9650663241047226" />
+      <entry key="S30" value="1.9882171511335094" />
+      <entry key="S60" value="1.9940911181242438" />
+      <entry key="M2" value="1.9970411817594316" />
+      <entry key="M5" value="1.998815512403671" />
+      <entry key="M10" value="2.0005808497711315" />
+      <entry key="M15" value="2.0327342237120796" />
+      <entry key="M30" value="3.0767269315237877" />
+      <entry key="H1" value="8.465066908254897" />
+      <entry key="H2" value="18.024971800573194" />
+      <entry key="H4" value="27.296692772523983" />
+      <entry key="D1" value="39.05480798703907" />
+      <entry key="W1" value="41.56523397526227" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="2.410089266905155E-238" />
+      <entry key="S30" value="6.2231610870391955E-80" />
+      <entry key="S60" value="2.4946264423934344E-40" />
+      <entry key="M2" value="1.579442907753455E-20" />
+      <entry key="M5" value="1.2112619039491804E-8" />
+      <entry key="M10" value="1.2414196616972978E-4" />
+      <entry key="M15" value="0.0030410805412231403" />
+      <entry key="M30" value="0.08660629311257398" />
+      <entry key="H1" value="0.4971398662448413" />
+      <entry key="H2" value="1.2138737486328741" />
+      <entry key="H4" value="1.9054979393753362" />
+      <entry key="D1" value="2.780879428590566" />
+      <entry key="W1" value="2.967656047128486" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.053590666494344456" />
+      <entry key="MS500" value="0.9693738766776328" />
+      <entry key="S2" value="1.6687384131964327" />
+      <entry key="S5" value="1.8602561018414003" />
+      <entry key="S10" value="1.928862512061699" />
+      <entry key="S30" value="1.9760005768515847" />
+      <entry key="S60" value="1.987964060566121" />
+      <entry key="M2" value="1.9939729459448634" />
+      <entry key="M5" value="1.9975870980657133" />
+      <entry key="M10" value="2.000087219670665" />
+      <entry key="M15" value="2.035304063710713" />
+      <entry key="M30" value="3.1621159285114353" />
+      <entry key="H1" value="8.958991208167513" />
+      <entry key="H2" value="19.234874130339165" />
+      <entry key="H4" value="29.199043680642827" />
+      <entry key="D1" value="41.834915239004125" />
+      <entry key="W1" value="44.53277212185385" />
+    </decayedShown>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3,
   &quot;fromUser&quot;: false
 }</component>
   <component name="ProjectId" id="3DyuQsqvB8S04Fwn6pIX90Z6WsU" />
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
@@ -55,6 +147,11 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
 }</component>
   <component name="SharedIndexes">
@@ -74,7 +171,9 @@
       <workItem from="1779266619477" duration="78000" />
       <workItem from="1779310864970" duration="3187000" />
       <workItem from="1779384268759" duration="1206000" />
-      <workItem from="1779640920186" duration="680000" />
+      <workItem from="1779640920186" duration="7480000" />
+      <workItem from="1779654852767" duration="1027000" />
+      <workItem from="1779655897196" duration="318000" />
     </task>
     <servers />
   </component>

@@ -23,6 +23,13 @@ SOFTWARE.
 */
 package isel.sisinf.ui;
 
+import isel.sisinf.jpa.Dal;
+import isel.sisinf.model.Cliente;
+import jakarta.persistence.OptimisticLockException;
+import jakarta.persistence.RollbackException;
+
+import java.math.BigDecimal;
+import java.util.List;
 import java.util.Scanner;
 import java.util.HashMap;
 
@@ -142,7 +149,8 @@ class UI implements AutoCloseable
             try
             {
                 __dbMethods.get(userInput).doWork();
-                System.in.read();
+                getScanner().nextLine();
+                //System.in.read();
             }
             catch(NullPointerException ex)
             {
@@ -177,39 +185,72 @@ class UI implements AutoCloseable
     }
 
     private void createClient() {
-        // TODO
-        System.out.println("createClient()");
-    }
-  
-    private void createPortfolio()
-    {
-        // TODO
-        System.out.println("createPortfolio()");
+        System.out.println("NIF, CC, Nome, Tipo(email/telefone), Contacto, Descrição (separados por espaço):");
+        String nif = getScanner().next(); String cc = getScanner().next(); String nome = getScanner().next();
+        String tipo = getScanner().next(); String contacto = getScanner().next(); String desc = getScanner().next();
+        try (Dal dal = new Dal()) {
+            dal.beginTransaction();
+            dal.criarClienteComContacto(nif, cc, nome, tipo, contacto, desc);
+            dal.commit();
+            System.out.println("Criado com sucesso.");
+        } catch (Exception e) { System.out.println("Erro: " + e.getMessage()); }
     }
 
-    private void listPositions()
-    {
-        // TODO
-        System.out.println("listPositions()");
+    private void createPortfolio() {
+        System.out.println("NIF e Nome do Portfólio:");
+        String nif = getScanner().next(); String nome = getScanner().next();
+        try (Dal dal = new Dal()) {
+            dal.beginTransaction(); dal.criarPortfolio(nif, nome); dal.commit();
+            System.out.println("Criado com sucesso.");
+        } catch (Exception e) { System.out.println("Erro: " + e.getMessage()); }
+    }
 
+    private void listPositions() {
+        System.out.println("NIF do cliente:");
+        String nif = getScanner().next();
+        try (Dal dal = new Dal()) {
+            List<Object[]> pos = dal.listarPosicoes(nif);
+            for (Object[] p : pos) {
+                System.out.printf("Portfólio: %s | ISIN: %s | Qtd: %s | Valor: %s | Var: %s%%%n", p[0], p[1], p[2], p[3], p[4]);
+            }
+        } catch (Exception e) { System.out.println("Erro: " + e.getMessage()); }
     }
 
     private void updateInvestments() {
-        // TODO
-        System.out.println("updateInvestments()");
+        System.out.println("ISIN e Novo Valor:");
+        String isin = getScanner().next(); BigDecimal valor = getScanner().nextBigDecimal();
+        try (Dal dal = new Dal()) {
+            dal.beginTransaction(); dal.atualizarValorDiario(isin, valor); dal.commit();
+            System.out.println("Atualizado com sucesso.");
+        } catch (Exception e) { System.out.println("Erro: " + e.getMessage()); }
     }
 
-    private void updateClient()
-    {
-        // TODO
-        System.out.println("parkScooter()");
-        
+    private void updateClient() {
+        System.out.println("NIF do cliente a atualizar:");
+        String nif = getScanner().next();
+        try (Dal dal = new Dal()) {
+            Cliente c = dal.encontrarCliente(nif);
+            if (c == null) return;
+            System.out.println("Novo nome:");
+            c.setNome(getScanner().next());
+
+            System.out.println("[TESTE] Altere o cliente na BD agora e prima ENTER...");
+            getScanner().nextLine();
+
+            dal.beginTransaction(); dal.atualizarCliente(c); dal.commit();
+            System.out.println("Atualizado com sucesso.");
+        } catch (RollbackException | OptimisticLockException e) {
+            System.out.println("ERRO DE CONCORRÊNCIA: O registo foi modificado por outro utilizador.");
+        } catch (Exception e) { System.out.println("Erro: " + e.getMessage()); }
     }
 
     private void about()
     {
         // TODO: Change the code and your Group ID & member names
-        System.out.println("Brought to you by a wonderful set of professors!");
+        System.out.println("Criado por:");
+        System.out.println("Criado por:");
+        System.out.println("Criado por:");
+        System.out.println("Criado por:");
         System.out.println("DAL version:"+ isel.sisinf.jpa.Dal.version());
         System.out.println("Core version:"+ isel.sisinf.model.Core.version());
         
