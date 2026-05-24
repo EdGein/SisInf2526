@@ -153,8 +153,40 @@ $$ LANGUAGE plpgsql;
 -- endregion
 
 -- region Question 4
-CREATE OR REPLACE PROCEDURE startTrip(dockid integer, clientid  integer) ...
---TODO    PERGUNTAR AO ENG SE isto cabeçalho  do PROCEDURE esta correcto???
+CREATE OR REPLACE PROCEDURE p_actualizaValorDiario(
+    p_identificador VARCHAR(12),
+    p_datatempo     TIMESTAMP,
+    p_valor         NUMERIC
+)
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    v_data DATE := p_datatempo::DATE;
+BEGIN
+    -- 1. Registar o triplo
+    INSERT INTO triplo_externo (identificador, data_tempo, valor)
+    VALUES (p_identificador, p_datatempo, p_valor)
+    ON CONFLICT DO NOTHING;
+
+    -- 2. Verificar se o instrumento existe
+    IF NOT EXISTS (SELECT 1 FROM instrumento WHERE instrumento_id = p_identificador) THEN
+        RETURN;
+    END IF;
+
+    -- 3. Atualizar registo diário do instrumento
+    INSERT INTO valor_instrumento_diario (instrumento_isin, data, valor_minimo, valor_maximo, valor_abertura, valor_fecho)
+    VALUES (p_identificador, v_data, p_valor, p_valor, p_valor, p_valor)
+    ON CONFLICT (instrumento_isin, data) DO UPDATE
+        SET valor_minimo = LEAST(valor_instrumento_diario.valor_minimo, EXCLUDED.valor_minimo),
+            valor_maximo = GREATEST(valor_instrumento_diario.valor_maximo, EXCLUDED.valor_maximo),
+            valor_fecho  = EXCLUDED.valor_fecho;
+
+    -- 4. Atualizar dados fundamentais
+    UPDATE dados_fundamentais
+    SET valor_actual = p_valor
+    WHERE instrumento_isin = p_identificador;
+END;
+$$;
 -- endregion
 
 -- region Question 5
@@ -212,41 +244,5 @@ CREATE TRIGGER trg_vw_contacto_cliente_ins
 -- endregion
 
 
-/*
--- region Question 4
-CREATE OR REPLACE PROCEDURE p_actualizaValorDiario(
-    p_identificador VARCHAR(12),
-    p_datatempo     TIMESTAMP,
-    p_valor         NUMERIC
-)
-LANGUAGE plpgsql
-AS $$
-DECLARE
-    v_data DATE := p_datatempo::DATE;
-BEGIN
-    -- 1. Registar o triplo
-    INSERT INTO triplo_externo (identificador, data_tempo, valor)
-    VALUES (p_identificador, p_datatempo, p_valor)
-    ON CONFLICT DO NOTHING;
 
-    -- 2. Verificar se o instrumento existe
-    IF NOT EXISTS (SELECT 1 FROM instrumento WHERE instrumento_id = p_identificador) THEN
-        RETURN;
-    END IF;
 
-    -- 3. Atualizar registo diário do instrumento
-    INSERT INTO valor_instrumento_diario (instrumento_isin, data, valor_minimo, valor_maximo, valor_abertura, valor_fecho)
-    VALUES (p_identificador, v_data, p_valor, p_valor, p_valor, p_valor)
-    ON CONFLICT (instrumento_isin, data) DO UPDATE
-        SET valor_minimo = LEAST(valor_instrumento_diario.valor_minimo, EXCLUDED.valor_minimo),
-            valor_maximo = GREATEST(valor_instrumento_diario.valor_maximo, EXCLUDED.valor_maximo),
-            valor_fecho  = EXCLUDED.valor_fecho;
-
-    -- 4. Atualizar dados fundamentais
-    UPDATE dados_fundamentais
-    SET valor_actual = p_valor
-    WHERE instrumento_isin = p_identificador;
-END;
-$$;
--- endregion
-*/
