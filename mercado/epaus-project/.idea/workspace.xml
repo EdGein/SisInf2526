@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="266c19c3-f01c-48e0-9195-ede888cdabc3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/Portefolio.java" afterDir="false" />
+    <list default="true" id="266c19c3-f01c-48e0-9195-ede888cdabc3" name="Changes" comment="merge of my work">
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/ContactoCliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/DadosFundamentais.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/Instrumento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/Mercado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/Posicao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/PosicaoId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../epaus-SQL/03-resolution.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../epaus-SQL/03-resolution.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/973712f8-625f-482e-8e46-a3479b565845.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/973712f8-625f-482e-8e46-a3479b565845.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/973712f8-625f-482e-8e46-a3479b565845/storage_v2/_src_/database/epaus.NKrDBQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/973712f8-625f-482e-8e46-a3479b565845/storage_v2/_src_/database/epaus.NKrDBQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/973712f8-625f-482e-8e46-a3479b565845/storage_v2/_src_/database/epaus.NKrDBQ/schema/public.abK9xQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/973712f8-625f-482e-8e46-a3479b565845/storage_v2/_src_/database/epaus.NKrDBQ/schema/public.abK9xQ.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/data_sources_history.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/data_sources_history.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/isel/sisinf/ui/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/isel/sisinf/ui/App.java" afterDir="false" />
@@ -22,11 +31,16 @@
       <change beforePath="$PROJECT_DIR$/dal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dal/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dal/src/main/java/isel/sisinf/jpa/Dal.java" beforeDir="false" afterPath="$PROJECT_DIR$/dal/src/main/java/isel/sisinf/jpa/Dal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dal/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dal/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dal/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dal/target/classes/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dal/target/classes/isel/sisinf/jpa/Dal.class" beforeDir="false" afterPath="$PROJECT_DIR$/dal/target/classes/isel/sisinf/jpa/Dal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dal/target/dal-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dal/target/dal-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dal/target/surefire-reports/TEST-isel.sisinf.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dal/target/surefire-reports/TEST-isel.sisinf.AppTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dal/target/surefire-reports/isel.sisinf.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dal/target/surefire-reports/isel.sisinf.AppTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/model/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/Portefolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/Portefolio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/isel/sisinf/model/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/classes/isel/sisinf/model/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/isel/sisinf/model/Portefolio.class" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/classes/isel/sisinf/model/Portefolio.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/target/model-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/model-1.0-SNAPSHOT.jar" afterDir="false" />
@@ -40,7 +54,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="35" />
+    <option name="cachedIndexableFilesCount" value="42" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -59,61 +73,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0285572328196688" />
-      <entry key="MS500" value="1.4910697976316958" />
-      <entry key="S2" value="1.8371163148215264" />
-      <entry key="S5" value="1.9313530099210015" />
-      <entry key="S10" value="1.9650663241047226" />
-      <entry key="S30" value="1.9882171511335094" />
-      <entry key="S60" value="1.9940911181242438" />
-      <entry key="M2" value="1.9970411817594316" />
-      <entry key="M5" value="1.998815512403671" />
-      <entry key="M10" value="2.0005808497711315" />
-      <entry key="M15" value="2.0327342237120796" />
-      <entry key="M30" value="3.0767269315237877" />
-      <entry key="H1" value="8.465066908254897" />
-      <entry key="H2" value="18.024971800573194" />
-      <entry key="H4" value="27.296692772523983" />
-      <entry key="D1" value="39.05480798703907" />
-      <entry key="W1" value="41.56523397526227" />
+      <entry key="MS100" value="1.000000728234194" />
+      <entry key="MS500" value="1.0793798725895587" />
+      <entry key="S2" value="2.1200517172939577" />
+      <entry key="S5" value="3.0099841318675273" />
+      <entry key="S10" value="3.4530215964974342" />
+      <entry key="S30" value="3.8046645760023687" />
+      <entry key="S60" value="3.9006051744525254" />
+      <entry key="M2" value="3.950718897531275" />
+      <entry key="M5" value="4.239362773435848" />
+      <entry key="M10" value="5.992869090507664" />
+      <entry key="M15" value="8.11992425167374" />
+      <entry key="M30" value="13.116018654653121" />
+      <entry key="H1" value="20.769798565382136" />
+      <entry key="H2" value="32.11988932259854" />
+      <entry key="H4" value="43.57504238587944" />
+      <entry key="D1" value="58.99075560929622" />
+      <entry key="W1" value="62.40460462738646" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="2.410089266905155E-238" />
-      <entry key="S30" value="6.2231610870391955E-80" />
-      <entry key="S60" value="2.4946264423934344E-40" />
-      <entry key="M2" value="1.579442907753455E-20" />
-      <entry key="M5" value="1.2112619039491804E-8" />
-      <entry key="M10" value="1.2414196616972978E-4" />
-      <entry key="M15" value="0.0030410805412231403" />
-      <entry key="M30" value="0.08660629311257398" />
-      <entry key="H1" value="0.4971398662448413" />
-      <entry key="H2" value="1.2138737486328741" />
-      <entry key="H4" value="1.9054979393753362" />
-      <entry key="D1" value="2.780879428590566" />
-      <entry key="W1" value="2.967656047128486" />
+      <entry key="S2" value="3.59009923320493E-250" />
+      <entry key="S5" value="1.6674106888643082E-100" />
+      <entry key="S10" value="1.2912825751415944E-50" />
+      <entry key="S30" value="2.346067105189947E-17" />
+      <entry key="S60" value="4.843621687528812E-9" />
+      <entry key="M2" value="6.959613270526472E-5" />
+      <entry key="M5" value="0.021728715002593116" />
+      <entry key="M10" value="0.14741311221550982" />
+      <entry key="M15" value="0.27947220792850447" />
+      <entry key="M30" value="0.5606177493587758" />
+      <entry key="H1" value="1.0307311054404948" />
+      <entry key="H2" value="1.8016396510543915" />
+      <entry key="H4" value="2.608247912498275" />
+      <entry key="D1" value="3.711233344893655" />
+      <entry key="W1" value="3.9570785214804522" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.053590666494344456" />
-      <entry key="MS500" value="0.9693738766776328" />
-      <entry key="S2" value="1.6687384131964327" />
-      <entry key="S5" value="1.8602561018414003" />
-      <entry key="S10" value="1.928862512061699" />
-      <entry key="S30" value="1.9760005768515847" />
-      <entry key="S60" value="1.987964060566121" />
-      <entry key="M2" value="1.9939729459448634" />
-      <entry key="M5" value="1.9975870980657133" />
-      <entry key="M10" value="2.000087219670665" />
-      <entry key="M15" value="2.035304063710713" />
-      <entry key="M30" value="3.1621159285114353" />
-      <entry key="H1" value="8.958991208167513" />
-      <entry key="H2" value="19.234874130339165" />
-      <entry key="H4" value="29.199043680642827" />
-      <entry key="D1" value="41.834915239004125" />
-      <entry key="W1" value="44.53277212185385" />
+      <entry key="MS100" value="0.9138320664926424" />
+      <entry key="MS500" value="1.0521309726258554" />
+      <entry key="S2" value="2.0493362165010653" />
+      <entry key="S5" value="2.95537625707106" />
+      <entry key="S10" value="3.418853723670098" />
+      <entry key="S30" value="3.791424827847464" />
+      <entry key="S60" value="3.8937305909197257" />
+      <entry key="M2" value="3.9472722111478293" />
+      <entry key="M5" value="4.258077325985099" />
+      <entry key="M10" value="6.134061106237585" />
+      <entry key="M15" value="8.391843027317133" />
+      <entry key="M30" value="13.669155521067605" />
+      <entry key="H1" value="21.793704284351552" />
+      <entry key="H2" value="33.91555983275891" />
+      <entry key="H4" value="46.1789520985698" />
+      <entry key="D1" value="62.70095463290966" />
+      <entry key="W1" value="66.36152543064286" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -121,6 +135,9 @@
   &quot;fromUser&quot;: false
 }</component>
   <component name="ProjectId" id="3DyuQsqvB8S04Fwn6pIX90Z6WsU" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -139,12 +156,15 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/prostipega/Programas/Labs/Isel/2526/SV/SisInf/SisInf - Projecto/SisInf2526/mercado/epaus-project&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/prostipega/Programas/Labs/Isel/2526/SV/SisInf/SisInf - Projecto/SisInf2526/mercado/epaus-SQL&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -173,11 +193,24 @@
       <workItem from="1779384268759" duration="1206000" />
       <workItem from="1779640920186" duration="7480000" />
       <workItem from="1779654852767" duration="1027000" />
-      <workItem from="1779655897196" duration="318000" />
+      <workItem from="1779655897196" duration="1733000" />
+      <workItem from="1779658563184" duration="66000" />
+      <workItem from="1779818831748" duration="336000" />
+      <workItem from="1779819172636" duration="1671000" />
+      <workItem from="1779991311650" duration="2831000" />
+      <workItem from="1779996612384" duration="25000" />
+      <workItem from="1779996644846" duration="468000" />
+      <workItem from="1779997182281" duration="181000" />
+      <workItem from="1779997696921" duration="4399000" />
+      <workItem from="1780002194254" duration="2071000" />
+      <workItem from="1780007521391" duration="3322000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>

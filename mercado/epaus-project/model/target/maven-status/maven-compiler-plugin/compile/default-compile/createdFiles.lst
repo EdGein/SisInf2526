@@ -1,3 +1,9 @@
+isel/sisinf/model/PosicaoId.class
+isel/sisinf/model/Instrumento.class
+isel/sisinf/model/ContactoCliente.class
 isel/sisinf/model/Cliente.class
-isel/sisinf/model/Core.class
 isel/sisinf/model/Portefolio.class
+isel/sisinf/model/Mercado.class
+isel/sisinf/model/Posicao.class
+isel/sisinf/model/DadosFundamentais.class
+isel/sisinf/model/Core.class

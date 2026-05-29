@@ -24,9 +24,10 @@ SOFTWARE.
 package isel.sisinf.ui;
 
 import isel.sisinf.jpa.Dal;
-import isel.sisinf.model.Cliente;
+import isel.sisinf.model.ContactoCliente;
+import isel.sisinf.model.Portefolio;
+import isel.sisinf.model.Posicao;
 import jakarta.persistence.OptimisticLockException;
-import jakarta.persistence.RollbackException;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -113,10 +114,10 @@ class UI implements AutoCloseable
             System.out.println();
             System.out.println("1. Exit");
             System.out.println("2. Create Client");
-            System.out.println("3. List Existing Costumer");
-            System.out.println("4. List Docks");
-            System.out.println("5. Start Trip");
-            System.out.println("6. Park Scooter");
+            System.out.println("3. Create Portefolio");
+            System.out.println("4. List Positions");
+            System.out.println("5. Update Investments");
+            System.out.println("6. Update Client");
             System.out.println("7. About");
             System.out.print(">");
             int result = s.nextInt();
@@ -149,8 +150,7 @@ class UI implements AutoCloseable
             try
             {
                 __dbMethods.get(userInput).doWork();
-                getScanner().nextLine();
-                //System.in.read();
+                System.in.read();
             }
             catch(NullPointerException ex)
             {
@@ -185,74 +185,149 @@ class UI implements AutoCloseable
     }
 
     private void createClient() {
-        System.out.println("NIF, CC, Nome, Tipo(email/telefone), Contacto, Descrição (separados por espaço):");
-        String nif = getScanner().next(); String cc = getScanner().next(); String nome = getScanner().next();
-        String tipo = getScanner().next(); String contacto = getScanner().next(); String desc = getScanner().next();
+        System.out.println("--- Criar Cliente e Contacto ---");
+        Scanner s = getScanner();
+
+        System.out.print("NIF: ");
+        String nif = s.next();
+        System.out.print("Cartão de Cidadão: ");
+        String cc = s.next();
+        s.nextLine(); // Consumir nova linha
+        System.out.print("Nome: ");
+        String nome = s.nextLine();
+        System.out.print("Tipo de Contacto (Email/Telefone): ");
+        String tipo = s.next();
+        System.out.print("Contacto (Email ou Número): ");
+        String contactoVal = s.next();
+        s.nextLine();
+        System.out.print("Descrição do Contacto: ");
+        String desc = s.nextLine();
+
+        // Dal implementa AutoCloseable — o try-with-resources fecha o EntityManager automaticamente
         try (Dal dal = new Dal()) {
-            dal.beginTransaction();
-            dal.criarClienteComContacto(nif, cc, nome, tipo, contacto, desc);
-            dal.commit();
-            System.out.println("Criado com sucesso.");
-        } catch (Exception e) { System.out.println("Erro: " + e.getMessage()); }
+            ContactoCliente ccEnt = new ContactoCliente();
+            ccEnt.setNif(nif);
+            ccEnt.setCartaoCidadao(cc);
+            ccEnt.setNome(nome);
+            ccEnt.setTipoContacto(tipo);
+            ccEnt.setContacto(contactoVal);
+            ccEnt.setDescricao(desc);
+
+            dal.criarClienteComContacto(ccEnt);
+            System.out.println("Cliente e contacto criados com sucesso através da vista!");
+        } catch (Exception e) {
+            System.err.println("Erro ao criar cliente: " + e.getMessage());
+        }
     }
 
     private void createPortfolio() {
-        System.out.println("NIF e Nome do Portfólio:");
-        String nif = getScanner().next(); String nome = getScanner().next();
+        System.out.println("--- Criar Portefólio ---");
+        Scanner s = getScanner();
+        System.out.print("NIF do Cliente: ");
+        String nif = s.next();
+        s.nextLine();
+        System.out.print("Nome do Portefólio: ");
+        String nomePortefolio = s.nextLine();
+
         try (Dal dal = new Dal()) {
-            dal.beginTransaction(); dal.criarPortfolio(nif, nome); dal.commit();
-            System.out.println("Criado com sucesso.");
-        } catch (Exception e) { System.out.println("Erro: " + e.getMessage()); }
+            Portefolio p = dal.criarPortefolio(nif, nomePortefolio);
+            System.out.println("Portefólio '" + p.getNome() + "' criado com sucesso!");
+        } catch (IllegalArgumentException e) {
+            System.err.println("Cliente não encontrado: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Erro ao criar portefólio: " + e.getMessage());
+        }
     }
 
     private void listPositions() {
-        System.out.println("NIF do cliente:");
-        String nif = getScanner().next();
+        System.out.println("--- Listar Posições do Cliente ---");
+        Scanner s = getScanner();
+        System.out.print("NIF do Cliente: ");
+        String nif = s.next();
+
+        // A navegação lazy (portefólios e posições) deve ocorrer DENTRO do bloco try,
+        // enquanto o EntityManager (e o contexto de persistência) ainda estão abertos.
         try (Dal dal = new Dal()) {
-            List<Object[]> pos = dal.listarPosicoes(nif);
-            for (Object[] p : pos) {
-                System.out.printf("Portfólio: %s | ISIN: %s | Qtd: %s | Valor: %s | Var: %s%%%n", p[0], p[1], p[2], p[3], p[4]);
+            List<Portefolio> portefolios = dal.listarPortefoliosPorNif(nif);
+
+            System.out.println("Portefólios do cliente " + nif + ":");
+            for (Portefolio p : portefolios) {
+                System.out.println("\nPortefólio: " + p.getNome() + " | Valor Total: " + p.getValorTotal() + " EUR");
+                System.out.println("----------------------------------------------------------------------");
+                System.out.printf("%-15s | %-12s | %-12s | %-12s\n", "ISIN", "Quantidade", "Valor Atual", "Total Posição");
+                System.out.println("----------------------------------------------------------------------");
+
+                for (Posicao pos : p.getPosicoes()) {
+                    BigDecimal valorActual = pos.getInstrumento().getDadosFundamentais().getValorActual();
+                    BigDecimal totalPosicao = pos.getQuantidade().multiply(valorActual);
+                    System.out.printf("%-15s | %-12.4f | %-12.2f | %-12.2f\n",
+                            pos.getInstrumento().getInstrumentoId(),
+                            pos.getQuantidade(),
+                            valorActual,
+                            totalPosicao
+                    );
+                }
             }
-        } catch (Exception e) { System.out.println("Erro: " + e.getMessage()); }
+        } catch (IllegalArgumentException e) {
+            System.err.println("Cliente não encontrado: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Erro ao listar posições: " + e.getMessage());
+        }
     }
 
     private void updateInvestments() {
-        System.out.println("ISIN e Novo Valor:");
-        String isin = getScanner().next(); BigDecimal valor = getScanner().nextBigDecimal();
+        System.out.println("--- Atualizar Valores Diários (Consolidação de Triplos) ---");
+        System.out.print("Deseja executar o procedimento de consolidação de triplos? (S/N): ");
+        Scanner s = getScanner();
+        String confirmacao = s.next();
+
+        if (!confirmacao.equalsIgnoreCase("S")) {
+            System.out.println("Operação cancelada.");
+            return;
+        }
+
+        // Dal.actualizaValorDiario() chama internamente CALL p_actualizaValorDiario()
+        // e gere a transação. O try-with-resources fecha o EntityManager no final.
         try (Dal dal = new Dal()) {
-            dal.beginTransaction(); dal.atualizarValorDiario(isin, valor); dal.commit();
-            System.out.println("Atualizado com sucesso.");
-        } catch (Exception e) { System.out.println("Erro: " + e.getMessage()); }
+            dal.actualizaValorDiario();
+            System.out.println("Consolidação efetuada com sucesso na base de dados!");
+        } catch (Exception e) {
+            System.err.println("Erro ao executar consolidação: " + e.getMessage());
+        }
     }
 
     private void updateClient() {
-        System.out.println("NIF do cliente a atualizar:");
-        String nif = getScanner().next();
+        System.out.println("--- Atualizar Cliente (Bloqueio Otimista) ---");
+        Scanner s = getScanner();
+        System.out.print("NIF do Cliente: ");
+        String nif = s.next();
+        s.nextLine(); // Consumir nova linha
+        System.out.print("Novo Nome: ");
+        String novoNome = s.nextLine();
+
+        // Dal.atualizarCliente() gere internamente a transação e lança
+        // OptimisticLockException se houver conflito de versão.
         try (Dal dal = new Dal()) {
-            Cliente c = dal.encontrarCliente(nif);
-            if (c == null) return;
-            System.out.println("Novo nome:");
-            c.setNome(getScanner().next());
-
-            System.out.println("[TESTE] Altere o cliente na BD agora e prima ENTER...");
-            getScanner().nextLine();
-
-            dal.beginTransaction(); dal.atualizarCliente(c); dal.commit();
-            System.out.println("Atualizado com sucesso.");
-        } catch (RollbackException | OptimisticLockException e) {
-            System.out.println("ERRO DE CONCORRÊNCIA: O registo foi modificado por outro utilizador.");
-        } catch (Exception e) { System.out.println("Erro: " + e.getMessage()); }
+            dal.atualizarCliente(nif, novoNome);
+            System.out.println("Cliente atualizado com sucesso!");
+        } catch (OptimisticLockException e) {
+            System.err.println("[ERRO DE CONCORRÊNCIA] Não foi possível atualizar o cliente.");
+            System.err.println("Os dados deste cliente foram alterados por outro utilizador em simultâneo.");
+            System.err.println("Por favor, recarregue os dados e tente novamente.");
+        } catch (IllegalArgumentException e) {
+            System.err.println("Cliente não encontrado: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Erro ao atualizar cliente: " + e.getMessage());
+        }
     }
 
     private void about()
     {
         // TODO: Change the code and your Group ID & member names
-        System.out.println("Criado por:");
-        System.out.println("Criado por:");
-        System.out.println("Criado por:");
-        System.out.println("Criado por:");
-        System.out.println("DAL version:"+ isel.sisinf.jpa.Dal.version());
-        System.out.println("Core version:"+ isel.sisinf.model.Core.version());
+        System.out.println("Brought to you by the amazing Isel group of students:");
+        System.out.println("Rafael Martins: 36250");
+        System.out.println("Bruno Gomes: xxxxx");
+        System.out.println("Luís Vasconcelos: xxxxx");
         
     }
 }
