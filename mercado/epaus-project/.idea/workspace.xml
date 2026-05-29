@@ -5,48 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="266c19c3-f01c-48e0-9195-ede888cdabc3" name="Changes" comment="merge of my work">
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/ContactoCliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/DadosFundamentais.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/Instrumento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/Mercado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/Posicao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/PosicaoId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../epaus-SQL/03-resolution.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../epaus-SQL/03-resolution.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/973712f8-625f-482e-8e46-a3479b565845.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/973712f8-625f-482e-8e46-a3479b565845.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/973712f8-625f-482e-8e46-a3479b565845/storage_v2/_src_/database/epaus.NKrDBQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/973712f8-625f-482e-8e46-a3479b565845/storage_v2/_src_/database/epaus.NKrDBQ/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/973712f8-625f-482e-8e46-a3479b565845/storage_v2/_src_/database/epaus.NKrDBQ/schema/public.abK9xQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/973712f8-625f-482e-8e46-a3479b565845/storage_v2/_src_/database/epaus.NKrDBQ/schema/public.abK9xQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/data_sources_history.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/data_sources_history.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/isel/sisinf/ui/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/isel/sisinf/ui/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/target/app-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/target/app-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/target/classes/isel/sisinf/ui/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/target/classes/isel/sisinf/ui/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/target/classes/isel/sisinf/ui/UI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/target/classes/isel/sisinf/ui/UI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/target/classes/isel/sisinf/ui/UI$Option.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/target/classes/isel/sisinf/ui/UI$Option.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/target/classes/isel/sisinf/ui/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/target/classes/isel/sisinf/ui/UI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/target/surefire-reports/TEST-isel.sisinf.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/target/surefire-reports/TEST-isel.sisinf.AppTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/target/surefire-reports/isel.sisinf.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/target/surefire-reports/isel.sisinf.AppTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dal/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dal/src/main/java/isel/sisinf/jpa/Dal.java" beforeDir="false" afterPath="$PROJECT_DIR$/dal/src/main/java/isel/sisinf/jpa/Dal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dal/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dal/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dal/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dal/target/classes/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dal/target/classes/isel/sisinf/jpa/Dal.class" beforeDir="false" afterPath="$PROJECT_DIR$/dal/target/classes/isel/sisinf/jpa/Dal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dal/target/dal-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dal/target/dal-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dal/target/surefire-reports/TEST-isel.sisinf.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dal/target/surefire-reports/TEST-isel.sisinf.AppTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dal/target/surefire-reports/isel.sisinf.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dal/target/surefire-reports/isel.sisinf.AppTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/model/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/Portefolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/isel/sisinf/model/Portefolio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/classes/isel/sisinf/model/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/classes/isel/sisinf/model/Cliente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/classes/isel/sisinf/model/Portefolio.class" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/classes/isel/sisinf/model/Portefolio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/target/model-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/model-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/surefire-reports/TEST-isel.sisinf.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/surefire-reports/TEST-isel.sisinf.AppTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/surefire-reports/isel.sisinf.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/surefire-reports/isel.sisinf.AppTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,6 +167,7 @@
       <workItem from="1779997696921" duration="4399000" />
       <workItem from="1780002194254" duration="2071000" />
       <workItem from="1780007521391" duration="3322000" />
+      <workItem from="1780072078880" duration="2536000" />
     </task>
     <servers />
   </component>
